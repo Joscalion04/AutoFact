@@ -1,0 +1,83 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textbf{Factura \#7f8e3895-0032-41c3-b243-47e5bb265636}}
+\lhead{Mercado IRSI}
+\rfoot{Página \thepage\ de \pageref{LastPage}}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+
+\definecolor{lightgray}{gray}{0.9}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\begin{center}
+    \Huge \textbf{Factura Electrónica}
+
+    \vspace{0.3cm}
+    \large \textbf{Mercado IRSI - Sistema Automatizado}
+
+    \vspace{0.5cm}
+    \normalsize Fecha de Emisión: \textbf{2025-07-19} \\
+    ID de Transacción: \textbf{7f8e3895-0032-41c3-b243-47e5bb265636} \\
+\end{center}
+
+\vspace{1cm}
+
+\section*{Información del Cliente}
+\begin{tabularx}{\textwidth}{L{4cm} L{12cm}}
+\rowcolor{lightgray}
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+Nombre completo & Elizabeth Conway \\
+Correo electrónico & hsanchez@example.org \\
+Teléfono & 001-811-513-7696x6338 \\
+Dirección & 44318 Nathan Rapid Apt. 680 East Michael, PR 48799 \\
+Ciudad & West Steven \\
+\end{tabularx}
+
+\vspace{0.8cm}
+
+\section*{Detalles de la Compra}
+\begin{tabularx}{\textwidth}{L{6cm} L{10cm}}
+\rowcolor{lightgray}
+\textbf{Concepto} & \textbf{Detalle} \\
+\hline
+Cantidad comprada & 2 \\
+Monto total & ₡5070.31 \\
+Tipo de pago & completo \\
+Estado del pago & exitoso \\
+IP de compra & 133.69.43.193 \\
+Fecha y hora & 2025-07-19T14:39:49.835536 \\
+\end{tabularx}
+
+\vspace{1.5cm}
+
+\section*{Observaciones}
+cliente frecuente
+
+\vfill
+
+\begin{center}
+    \textit{Gracias por su compra.} \\
+    Mercado IRSI - www.mercadoirsi.com \\
+    Factura generada automáticamente por el sistema.
+\end{center}
+
+\end{document}

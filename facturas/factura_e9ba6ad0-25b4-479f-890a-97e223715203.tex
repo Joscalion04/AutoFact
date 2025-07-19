@@ -1,0 +1,83 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textbf{Factura \#e9ba6ad0-25b4-479f-890a-97e223715203}}
+\lhead{Mercado IRSI}
+\rfoot{Página \thepage\ de \pageref{LastPage}}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+
+\definecolor{lightgray}{gray}{0.9}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\begin{center}
+    \Huge \textbf{Factura Electrónica}
+
+    \vspace{0.3cm}
+    \large \textbf{Mercado IRSI - Sistema Automatizado}
+
+    \vspace{0.5cm}
+    \normalsize Fecha de Emisión: \textbf{2025-07-19} \\
+    ID de Transacción: \textbf{e9ba6ad0-25b4-479f-890a-97e223715203} \\
+\end{center}
+
+\vspace{1cm}
+
+\section*{Información del Cliente}
+\begin{tabularx}{\textwidth}{L{4cm} L{12cm}}
+\rowcolor{lightgray}
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+Nombre completo & Michael Rogers \\
+Correo electrónico & boltonheather@example.org \\
+Teléfono & 001-931-711-2203x27351 \\
+Dirección & 0178 Christopher Mountain South Casey, VA 07368 \\
+Ciudad & Fisherfurt \\
+\end{tabularx}
+
+\vspace{0.8cm}
+
+\section*{Detalles de la Compra}
+\begin{tabularx}{\textwidth}{L{6cm} L{10cm}}
+\rowcolor{lightgray}
+\textbf{Concepto} & \textbf{Detalle} \\
+\hline
+Cantidad comprada & 2 \\
+Monto total & ₡2373.97 \\
+Tipo de pago & fraccionado \\
+Estado del pago & exitoso \\
+IP de compra & 177.59.79.145 \\
+Fecha y hora & 2025-07-19T14:39:49.837532 \\
+\end{tabularx}
+
+\vspace{1.5cm}
+
+\section*{Observaciones}
+
+
+\vfill
+
+\begin{center}
+    \textit{Gracias por su compra.} \\
+    Mercado IRSI - www.mercadoirsi.com \\
+    Factura generada automáticamente por el sistema.
+\end{center}
+
+\end{document}

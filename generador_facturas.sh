@@ -15,9 +15,8 @@ log_diario="$carpeta_logs/log_diario.log"
 > "$log_diario"
 
 # Procesar cada línea del CSV
-tail -n +2 "$csv_file" | while IFS=',' read -r id fecha nombre correo telefono direccion ciudad cantidad monto pago estado ip timestamp obs
+tail -n +2 "$csv_file" | while IFS=';' read -r id fecha nombre correo telefono direccion ciudad cantidad monto pago estado ip timestamp obs
 do
-    # Sanitizar espacios y caracteres especiales (si es necesario)
     id_sanitizado="${id// /_}"
     tex_out="$carpeta_facturas/factura_${id_sanitizado}.tex"
 
@@ -39,7 +38,6 @@ do
     sed -i "s|{timestamp}|$timestamp|g" "$tex_out"
     sed -i "s|{observaciones}|$obs|g" "$tex_out"
 
-    # Compilar y capturar logs
     pdflatex -interaction=nonstopmode -output-directory="$carpeta_facturas" "$tex_out" > "$carpeta_logs/log_factura_${id_sanitizado}.log" 2>&1
 
     if grep -q "!" "$carpeta_logs/log_factura_${id_sanitizado}.log"; then

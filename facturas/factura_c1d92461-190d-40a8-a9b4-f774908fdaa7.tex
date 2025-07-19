@@ -1,0 +1,83 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textbf{Factura \#c1d92461-190d-40a8-a9b4-f774908fdaa7}}
+\lhead{Mercado IRSI}
+\rfoot{Página \thepage\ de \pageref{LastPage}}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+
+\definecolor{lightgray}{gray}{0.9}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\begin{center}
+    \Huge \textbf{Factura Electrónica}
+
+    \vspace{0.3cm}
+    \large \textbf{Mercado IRSI - Sistema Automatizado}
+
+    \vspace{0.5cm}
+    \normalsize Fecha de Emisión: \textbf{2025-07-19} \\
+    ID de Transacción: \textbf{c1d92461-190d-40a8-a9b4-f774908fdaa7} \\
+\end{center}
+
+\vspace{1cm}
+
+\section*{Información del Cliente}
+\begin{tabularx}{\textwidth}{L{4cm} L{12cm}}
+\rowcolor{lightgray}
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+Nombre completo & Darryl Solomon \\
+Correo electrónico & hwilson@example.com \\
+Teléfono & 851.493.8725x39564 \\
+Dirección & 774 Matthew Trace Suite 259 Rubenbury, CT 92449 \\
+Ciudad & Port Philipberg \\
+\end{tabularx}
+
+\vspace{0.8cm}
+
+\section*{Detalles de la Compra}
+\begin{tabularx}{\textwidth}{L{6cm} L{10cm}}
+\rowcolor{lightgray}
+\textbf{Concepto} & \textbf{Detalle} \\
+\hline
+Cantidad comprada & 3 \\
+Monto total & ₡5575.62 \\
+Tipo de pago & completo \\
+Estado del pago & fallido \\
+IP de compra & 80.42.197.80 \\
+Fecha y hora & 2025-07-19T14:39:49.834532 \\
+\end{tabularx}
+
+\vspace{1.5cm}
+
+\section*{Observaciones}
+
+
+\vfill
+
+\begin{center}
+    \textit{Gracias por su compra.} \\
+    Mercado IRSI - www.mercadoirsi.com \\
+    Factura generada automáticamente por el sistema.
+\end{center}
+
+\end{document}

@@ -7,7 +7,7 @@ faker = Faker()
 file_name = f"compras/compras_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
 
 with open(file_name, 'w', newline='') as csvfile:
-    writer = csv.writer(csvfile)
+    writer = csv.writer(csvfile, delimiter=';')
     writer.writerow([
         "id_transaccion", "fecha_emision", "nombre", "correo", "telefono",
         "direccion", "ciudad", "cantidad", "monto", "pago", "estado_pago", "ip", "timestamp", "observaciones"
