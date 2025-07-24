@@ -18,7 +18,7 @@ CARPETA_FACTURAS = "facturas"
 
 def correo_valido(correo):
     try:
-        validate_email(correo, check_deliverability=False)  # Permitir dominios ficticios
+        validate_email(correo, check_deliverability=False)  
         return True
     except EmailNotValidError:
         return False
@@ -71,7 +71,7 @@ with open(PENDIENTES, newline='') as f:
             print(f"✅ Enviado: {pdf} → {correo}")
             resultados.append([pdf, correo, "exitoso"])
 
-            time.sleep(1.2)  # <--- PAUSA ENTRE CORREOS
+            time.sleep(1.2)  
 
         except Exception as e:
             print(f"❌ Error enviando {pdf} → {correo}: {e}")

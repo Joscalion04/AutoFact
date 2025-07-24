@@ -3,5 +3,5 @@ Resumen Diario de Facturación - Tue Jul 22 14:58:46 CST 2025
 Total de correos procesados: 
 Total vendido (simulado): ₡50844979
 Pedidos pagados completamente: 4
-Envíos exitosos: 
-Envíos fallidos: 
+Envíos exitosos: 8
+Envíos fallidos: 2

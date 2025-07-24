@@ -1,26 +1,36 @@
 from faker import Faker
 import csv
-import random
+import unicodedata
+import re
 
-# Cantidad de empleados a generar
 NUM_EMPLEADOS = 10
-
-# Dominio institucional
 DOMINIO = "empresa.com"
 
-# Inicializar Faker
-fake = Faker('es_MX')  # Puedes usar 'es_CR' si lo soporta tu sistema
+fake = Faker('es_MX')
 
-# Crear archivo CSV
+def limpiar_texto(texto):
+    texto = unicodedata.normalize('NFKD', texto).encode('ASCII', 'ignore').decode('utf-8')
+    texto = re.sub(r"[^\w\s\.]", "", texto)  
+    texto = re.sub(r"\s+", " ", texto).strip()  
+    return texto
+
+def limpiar_correo(correo):
+    correo = correo.lower()
+    correo = re.sub(r"\s+", "", correo) 
+    correo = re.sub(r"\.{2,}", ".", correo)  
+    correo = correo.strip(".") 
+    return correo
+
 with open('empleados.csv', mode='w', newline='', encoding='utf-8') as archivo:
     writer = csv.writer(archivo)
-    writer.writerow(['Nombre', 'Correo'])  # Encabezados
+    writer.writerow(['Nombre', 'Correo'])
 
     for _ in range(NUM_EMPLEADOS):
-        nombre = fake.name()
-        base_correo = nombre.lower().replace(" ", ".").replace("ñ", "n")
-        correo = f"{base_correo}@{DOMINIO}"
-
-        writer.writerow([nombre, correo])
+        nombre_real = fake.name()
+        nombre_limpio = limpiar_texto(nombre_real)
+        correo_base = nombre_limpio.lower().replace(" ", ".")
+        correo_base = limpiar_correo(correo_base)
+        correo = f"{correo_base}@{DOMINIO}"
+        writer.writerow([nombre_limpio, correo])
 
 print(f"Archivo 'empleados.csv' generado con {NUM_EMPLEADOS} empleados.")
